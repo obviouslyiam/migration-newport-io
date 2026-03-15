@@ -3,338 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newport Capital - Strategic Investment Management</title>
+    <title>Newport Capital LLC — Strategic Investment &amp; Technology Holdings</title>
+    <meta name="description" content="Newport Capital LLC is a family office focused on technology investments, digital property development, and strategic business operations. Based in Newport Beach, CA.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newport.io/">
+    <meta property="og:title" content="Newport Capital LLC — Strategic Investment &amp; Technology Holdings">
+    <meta property="og:description" content="A family office focused on technology investments, digital property development, and strategic business operations.">
+    <meta property="og:site_name" content="Newport Capital LLC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Newport Capital LLC">
+    <meta name="twitter:description" content="A family office focused on technology investments, digital property development, and strategic business operations.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --blue-deep:   #0f2559;
+            --blue-mid:    #1e3a8a;
+            --blue-bright: #2563eb;
+            --blue-light:  #93c5fd;
+            --slate-100:   #f1f5f9;
+            --slate-200:   #e2e8f0;
+            --slate-500:   #64748b;
+            --slate-700:   #334155;
+            --slate-900:   #0f172a;
+            --white:       #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
+            color: var(--slate-900);
+            background: var(--white);
         }
-        
-        /* Header */
+
+        /* ── NAV ── */
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: white;
-            padding: 1rem 0;
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            z-index: 100;
+            background: rgba(15, 37, 89, 0.97);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
-        
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            height: 64px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            color: var(--white);
+            letter-spacing: 0.01em;
         }
-        
+
         .logo span {
-            color: #93c5fd;
+            color: var(--blue-light);
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
-        
+
         nav a {
-            color: white;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
         }
-        
+
         nav a:hover {
-            color: #93c5fd;
+            color: var(--white);
         }
-        
-        /* Hero */
+
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
-            color: white;
-            padding: 120px 2rem 80px;
+            background: linear-gradient(160deg, var(--blue-deep) 0%, var(--blue-mid) 55%, #1d4ed8 100%);
+            color: var(--white);
+            padding: 160px 2rem 100px;
             text-align: center;
-            margin-top: 60px;
         }
-        
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(147, 197, 253, 0.3);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+        }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2.4rem, 5vw, 4rem);
             font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
         }
-        
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem);
             font-weight: 300;
+            color: rgba(255,255,255,0.82);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #1e3a8a;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+
+        /* ── DIVIDER ── */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background: var(--blue-light);
+            margin: 0 auto;
+        }
+
+        /* ── ABOUT ── */
+        .about {
+            background: var(--white);
+            padding: 96px 2rem;
+        }
+
+        .about-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 1rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--blue-bright);
+            margin-bottom: 1rem;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--blue-deep);
+            margin-bottom: 2rem;
+            line-height: 1.2;
         }
-        
-        /* Services */
-        .services {
-            padding: 80px 2rem;
+
+        .about-inner p {
+            font-size: 1.1rem;
+            color: var(--slate-700);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-inner p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── PORTFOLIO ── */
+        .portfolio {
+            background: var(--slate-100);
+            padding: 96px 2rem;
+        }
+
+        .portfolio-inner {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+
+        .portfolio-header {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #1e3a8a;
+            margin-bottom: 56px;
         }
-        
-        .services-grid {
+
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+
+        .portfolio-card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 10px;
+            padding: 2rem 2rem 1.75rem;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+
+        .portfolio-card:hover {
+            box-shadow: 0 8px 32px rgba(15, 37, 89, 0.10);
+            transform: translateY(-3px);
         }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+
+        .card-domain {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-mid);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.01em;
         }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e3a8a;
+
+        .card-domain a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        
-        .service-card p {
-            color: #666;
-            line-height: 1.7;
+
+        .card-domain a:hover {
+            color: var(--blue-bright);
         }
-        
-        /* About */
-        .about {
-            background: #f8fafc;
-            padding: 80px 2rem;
+
+        .card-category {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--slate-500);
+            margin-bottom: 0.85rem;
         }
-        
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+
+        .card-rule {
+            width: 28px;
+            height: 2px;
+            background: var(--blue-light);
+            margin-bottom: 0.85rem;
         }
-        
-        .about-content p {
-            font-size: 1.2rem;
-            color: #475569;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+
+        .card-description {
+            font-size: 0.92rem;
+            color: var(--slate-700);
+            line-height: 1.65;
         }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 3rem auto 0;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: #1e3a8a;
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            color: #64748b;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* Contact */
+
+        /* ── CONTACT ── */
         .contact {
-            padding: 80px 2rem;
-            max-width: 800px;
+            background: var(--white);
+            padding: 96px 2rem;
+        }
+
+        .contact-inner {
+            max-width: 640px;
             margin: 0 auto;
             text-align: center;
         }
-        
-        .contact-info {
+
+        .contact-inner p {
+            font-size: 1.05rem;
+            color: var(--slate-700);
+            margin-bottom: 2.5rem;
+            line-height: 1.75;
+        }
+
+        .contact-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-            font-size: 1.1rem;
+            align-items: center;
+            gap: 0.9rem;
         }
-        
-        .contact-info a {
-            color: #1e3a8a;
+
+        .contact-list li {
+            font-size: 1rem;
+            color: var(--slate-700);
+        }
+
+        .contact-list a {
+            color: var(--blue-mid);
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s;
         }
-        
-        /* Footer */
+
+        .contact-list a:hover {
+            color: var(--blue-bright);
+        }
+
+        /* ── FOOTER ── */
         footer {
-            background: #1e293b;
-            color: white;
+            background: var(--slate-900);
+            color: rgba(255,255,255,0.55);
             text-align: center;
             padding: 2rem;
+            font-size: 0.875rem;
         }
-        
-        footer p {
-            opacity: 0.8;
+
+        footer strong {
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
         }
-        
+
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
             nav ul {
                 display: none;
             }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
+
+            .hero {
+                padding: 120px 1.5rem 80px;
+            }
+
+            .about,
+            .portfolio,
+            .contact {
+                padding: 72px 1.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- NAV -->
     <header>
         <nav>
             <div class="logo">Newport <span>Capital</span></div>
             <ul>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero">
-        <h1>Strategic Investment Management</h1>
-        <p>Building wealth through disciplined investment strategies and comprehensive financial planning</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+        <div class="hero-eyebrow">Newport Beach, California</div>
+        <h1>Newport Capital LLC</h1>
+        <p class="hero-sub">Strategic Investment &amp; Technology Holdings</p>
     </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Portfolio Management</h3>
-                <p>Customized investment portfolios designed to meet your specific financial goals and risk tolerance.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">💼</div>
-                <h3>Wealth Advisory</h3>
-                <p>Comprehensive wealth management strategies for high-net-worth individuals and families.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Strategic Planning</h3>
-                <p>Long-term financial planning and investment strategies aligned with your objectives.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
+    <!-- ABOUT -->
     <section class="about" id="about">
-        <div class="about-content">
-            <h2 class="section-title">About Newport Capital</h2>
-            <p>Newport Capital is a premier investment management firm dedicated to helping clients achieve their financial objectives through sophisticated investment strategies and personalized service.</p>
-            <p>Our team of experienced professionals brings decades of combined expertise in portfolio management, financial planning, and wealth advisory services.</p>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Years Experience</div>
+        <div class="about-inner">
+            <p class="section-label">About</p>
+            <h2 class="section-title">A Family Office Built Around Technology</h2>
+            <div class="divider" style="margin-bottom: 2rem;"></div>
+            <p>Newport Capital LLC is a private family office focused on technology investments, digital property development, and strategic business operations.</p>
+            <p>We build and hold a concentrated portfolio of software platforms, data products, and digital media properties — operating them for the long term rather than optimizing for exits.</p>
+            <p>Our approach is operator-led: hands-on with product, engineering, and growth across every holding in the portfolio.</p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-inner">
+            <div class="portfolio-header">
+                <p class="section-label">Portfolio</p>
+                <h2 class="section-title">Holdings &amp; Brands</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://nimbus.io" target="_blank" rel="noopener">Nimbus.io</a></div>
+                    <div class="card-category">Technology &amp; Development</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Technology studio and development services. Engineering infrastructure and software products for the portfolio and select external clients.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">$1B+</div>
-                    <div class="stat-label">Assets Managed</div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://polyfire.co" target="_blank" rel="noopener">PolyFire.co</a></div>
+                    <div class="card-category">Prediction Market Trading</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Telegram-native trading bot for Polymarket. Automated copy trading, smart wallet signals, and position management for retail prediction market participants.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Satisfied Clients</div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://boomsauce.com" target="_blank" rel="noopener">BoomSauce.com</a></div>
+                    <div class="card-category">Marketing Technology</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Marketing technology and growth operations. AI-assisted content, distribution systems, and demand generation infrastructure for portfolio brands.</p>
                 </div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://polypulse.xyz" target="_blank" rel="noopener">PolyPulse.xyz</a></div>
+                    <div class="card-category">Market Intelligence</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Market intelligence and analytics for prediction markets. Tracking smart money movements, volume trends, and emerging signals across Polymarket.</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://tradesphere.ai" target="_blank" rel="noopener">TradeSphere.ai</a></div>
+                    <div class="card-category">Data Analytics API</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">B2B data API serving alpha markets and smart wallet intelligence to developers and trading platforms building on Polymarket data.</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://bankingdeal.com" target="_blank" rel="noopener">BankingDeal.com</a></div>
+                    <div class="card-category">Financial Education</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Financial education and product comparison resource covering banking, credit, and lending. Organic search-driven content for consumers evaluating financial products.</p>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="card-domain"><a href="https://insurerocket.com" target="_blank" rel="noopener">InsureRocket.com</a></div>
+                    <div class="card-category">Insurance Education</div>
+                    <div class="card-rule"></div>
+                    <p class="card-description">Insurance education and comparison resource. Helping consumers understand coverage options across auto, home, health, and life insurance categories.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Get in Touch</h2>
-        <p>Ready to start your investment journey? Contact us today for a consultation.</p>
-        <div class="contact-info">
-            <div>📧 <a href="mailto:info@newport.io">info@newport.io</a></div>
-            <div>📍 Newport Beach, California</div>
+        <div class="contact-inner">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="divider" style="margin-bottom: 2rem;"></div>
+            <p>For partnership inquiries, investment discussions, or general correspondence, reach out directly.</p>
+            <ul class="contact-list">
+                <li><a href="mailto:michael@newport.io">michael@newport.io</a></li>
+                <li>Newport Beach, CA</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Newport Capital. All rights reserved.</p>
+        <p>&copy; 2026 <strong>Newport Capital LLC</strong>. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
